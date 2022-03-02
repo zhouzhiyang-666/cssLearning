@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <div class="heart"></div>
+  </body>
+  <style type="text/css">
+    *{
+      padding: 0;
+      margin: 0;
+    }
+    body{
+      width: 100vh;
+      height: 100vh;
+      background-color: #FFFFFF;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    
+    .heart{
+      width: 200px;
+      height: 200px;
+      background-color: red;
+      transform: rotate(45deg);
+      animation-name: break;
+      animation-duration: 2s;
+      animation-iteration-count: infinite;
+      box-shadow: darkgrey 10px 10px 60px 5px ;//边框阴
+    }
+    .heart::before{
+      content: '';
+      width: 200px;
+      height: 200px;
+      /* background-color: #4169E1; */
+      background-color: red;
+      border-radius: 50%;
+      position: absolute;
+      /* top: 100px; */
+      transform: translateY(-50%);
+    }
+    .heart::after{
+      content: '';
+      width: 200px;
+      height: 200px;
+      /* background-color: #4169E1; */
+      background-color: red;
+      border-radius: 50%;
+      position: absolute;
+      transform: translateX(-50%);
+    }
+    
+    @keyframes break{
+      25%{
+        transform: rotate(45deg) scale(.5);
+        opacity: 0.5;
+      }
+      50%{
+        transform: rotate(45deg) scale(1);
+        opacity: 1;
+      }
+      75%{
+        transform: rotate(45deg) scale(.5);
+        opacity: 0.5;
+      }
+      100%{
+        transform: rotate(45deg) scale(1);
+        opacity: 1;
+      }
+    }
+    /* @keyframes rotate{
+      form{
+        transform: rotate(45deg);
+      }
+      to{
+        transform: rotate(45deg);
+      }
+    } */
+  </style>
+</html>
